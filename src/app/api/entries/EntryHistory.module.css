@@ -1,0 +1,123 @@
+.container {
+  width: 100%;
+  max-width: 42rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #fce7f3;
+}
+
+.empty {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+  background-color: #c0dbbc;
+  border-radius: 40px;
+  border: 2px dashed #e5e7eb;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.grandTotal {
+  background-color: #049657;
+  padding: 0.5rem 1rem;
+  border-radius: 48px;
+}
+
+.grandTotalText {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dayBlock {
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 1rem;
+}
+
+.dayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  background-color: #f9fafb;
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+}
+
+.date {
+  font-weight: 700;
+  color: #374151;
+}
+
+.dayTotal {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.dayTotalValue {
+  color: #111827;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  font-size: 0.875rem;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.thead {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.th {
+  padding: 0.5rem 0;
+}
+
+.tbody {
+  color: #374151;
+}
+
+.row {
+  border-top: 1px solid #f3f4f6;
+}
+
+.project {
+  padding: 0.75rem 0;
+  font-weight: 500;
+  color: #00bf59;
+}
+
+.hours {
+  padding: 0.75rem 0;
+}
+
+.description {
+  padding: 0.75rem 0;
+  color: #6b7280;
+  font-style: italic;
+}
