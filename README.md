@@ -20,35 +20,44 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 1. Project Structure (Final Overview)
 
+## 1. Project Structure (Final Overview)
+
+```txt
 time-tracker/
-├── prisma/                 # Database configuration
-│   ├── migrations/         # History of database changes
-│   ├── dev.db              # SQLite database file (generated after migration)
-│   └── schema.prisma       # Database models and connection settings
-├── public/                 
-├── src/                    
-│   ├── app/                # Next.js App Router
-│   │   ├── api/            # Backend API routes
+├── prisma/
+│   ├── migrations/          # Database migrations history
+│   ├── dev.db               # SQLite database file (generated after migration)
+│   └── schema.prisma        # Prisma schema (database models)
+│
+├── src/
+│   ├── app/
+│   │   ├── api/
 │   │   │   └── entries/
-│   │   │       └── route.ts # API logic (GET/POST) for time entries
-│   │   ├── lib/            
-│   │   │   └── prisma.ts   # Reusable Prisma Client instance
-│   │   ├── globals.css     
-│   │   ├── layout.tsx      
-│   │   └── page.tsx       
-│   └── components/         
-│       ├── EntryHistory/   # History list component
-│       │   ├── EntryHistory.module.css
-│       │   └── EntryHistory.tsx
-│       └── TimeEntryForm/  # Data entry form component
-│           ├── TimeEntryForm.module.css
-│           └── TimeEntryForm.tsx
-├── .gitignore              
-├── next.config.ts         
-├── package.json            
-├── prisma.config.ts        
-├── README.md               
-└── tsconfig.json          
+│   │   │       └── route.ts # REST API (GET/POST time entries)
+│   │   │
+│   │   ├── layout.tsx       # Root layout
+│   │   ├── page.tsx         # Main page
+│   │   └── globals.css      # Global styles
+│   │
+│   ├── components/
+│   │   ├── EntryHistory/
+│   │   │   ├── EntryHistory.tsx
+│   │   │   └── EntryHistory.module.css
+│   │   │
+│   │   └── TimeEntryForm/
+│   │       ├── TimeEntryForm.tsx
+│   │       └── TimeEntryForm.module.css
+│   │
+│   └── lib/
+│       └── prisma.ts        # Reusable Prisma Client instance
+│
+├── .gitignore
+├── next.config.ts
+├── package.json
+├── prisma.config.ts
+├── README.md
+└── tsconfig.json
+        
 
 # Time Tracker Application
 
