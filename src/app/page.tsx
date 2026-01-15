@@ -1,8 +1,8 @@
 "use client";
 
-import TimeEntryForm from "@/components/TimeEntryForm";
+import TimeEntryForm from "@/components/TimeEntryForm/TimeEntryForm";
 import { useEffect, useState, useCallback } from "react";
-import EntryHistory from "./api/entries/EntryHistory";
+import EntryHistory from "../components/EntryHistory/EntryHistory";
 
 
 export default function Home() {

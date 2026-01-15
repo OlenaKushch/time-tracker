@@ -16,21 +16,74 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+1. Project Structure (Final Overview)
 
-To learn more about Next.js, take a look at the following resources:
+time-tracker/
+├── prisma/                 # Database configuration
+│   ├── migrations/         # History of database changes
+│   ├── dev.db              # SQLite database file (generated after migration)
+│   └── schema.prisma       # Database models and connection settings
+├── public/                 
+├── src/                    
+│   ├── app/                # Next.js App Router
+│   │   ├── api/            # Backend API routes
+│   │   │   └── entries/
+│   │   │       └── route.ts # API logic (GET/POST) for time entries
+│   │   ├── lib/            
+│   │   │   └── prisma.ts   # Reusable Prisma Client instance
+│   │   ├── globals.css     
+│   │   ├── layout.tsx      
+│   │   └── page.tsx       
+│   └── components/         
+│       ├── EntryHistory/   # History list component
+│       │   ├── EntryHistory.module.css
+│       │   └── EntryHistory.tsx
+│       └── TimeEntryForm/  # Data entry form component
+│           ├── TimeEntryForm.module.css
+│           └── TimeEntryForm.tsx
+├── .gitignore              
+├── next.config.ts         
+├── package.json            
+├── prisma.config.ts        
+├── README.md               
+└── tsconfig.json          
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Time Tracker Application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A full-stack web application built for time management. Users can log their daily work hours per project, view their history grouped by date, and see calculated totals.
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Database**: [SQLite](https://www.sqlite.org/) via [Prisma ORM](https://www.prisma.io/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + CSS Modules
+- **react-hot-toast** (notifications)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features & Requirements
+
+- **Time Entry Form**: Allows selecting a date, project (dropdown), hours (positive number), and work description.
+- **Entry History**: Lists all records grouped by date in descending order.
+- **Dynamic Calculations**: Displays total hours per day and a grand total for all records.
+- **Strict Validation**:
+  - All fields are required.
+  - Maximum of 24 hours allowed per calendar date (verified via backend logic).
+  - Hours must be a positive number.
+
+##  Architecture Description
+
+The project follows a **full-stack Next.js** architecture:
+
+- **API Layer**: Next.js Route Handlers (`/api/entries`) handle REST-style API requests, business logic, and database interaction.
+- **Data Layer**: Prisma ORM is used for type-safe database access. SQLite is chosen as a lightweight, file-based database suitable for test assignments.
+- **UI Layer**: React functional components with TypeScript and basic React hooks (`useState`, `useEffect`) are used to manage state and side effects. Expensive optimizations (e.g. `useMemo`, `useCallback`) were intentionally avoided to keep the code simple and readable.
+- **Styling Strategy**: Component-level styling is implemented using CSS Modules to ensure scoped, maintainable, and predictable styles.
+
+## Installation & Setup
+
+Follow these steps to run the project locally:
+
+
+
